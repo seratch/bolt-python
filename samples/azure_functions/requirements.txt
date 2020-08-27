@@ -1,0 +1,2 @@
+azure-functions<2
+slack_bolt
