@@ -26,7 +26,7 @@ class TestSocketModeBuiltin:
             token="xoxb-api_test",
             base_url="http://localhost:8888",
         )
-        start_socket_mode_server(self, 3011)
+        start_socket_mode_server(self, 9011)
         time.sleep(3)  # wait for the server
 
     def teardown_method(self):
@@ -57,7 +57,7 @@ class TestSocketModeBuiltin:
         )
         try:
             handler.client.ping_pong_trace_enabled = True
-            handler.client.wss_uri = "ws://127.0.0.1:3011/link"
+            handler.client.wss_uri = "ws://127.0.0.1:9011/link"
 
             handler.connect()
             assert handler.client.is_connected() is True

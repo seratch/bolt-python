@@ -26,7 +26,7 @@ class TestSocketModeWebsocketClient:
             token="xoxb-api_test",
             base_url="http://localhost:8888",
         )
-        start_socket_mode_server(self, 3012)
+        start_socket_mode_server(self, 9012)
         time.sleep(3)  # wait for the server
 
     def teardown_method(self):
@@ -56,7 +56,7 @@ class TestSocketModeWebsocketClient:
             trace_enabled=True,
         )
         try:
-            handler.client.wss_uri = "ws://localhost:3012/link"
+            handler.client.wss_uri = "ws://localhost:9012/link"
 
             handler.connect()
             assert handler.client.is_connected() is True
