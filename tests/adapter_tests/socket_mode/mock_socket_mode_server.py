@@ -83,7 +83,7 @@ def start_socket_mode_server(test, port: int):
         )
         test.sm_thread.daemon = True
         test.sm_thread.start()
-        time.sleep(2)  # wait for the server
+        time.sleep(3)  # wait for the server
     else:
         test.sm_process = Process(
             target=start_process_socket_mode_server, kwargs={"port": port}
