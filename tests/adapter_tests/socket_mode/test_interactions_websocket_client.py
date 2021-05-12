@@ -27,7 +27,7 @@ class TestSocketModeWebsocketClient:
             base_url="http://localhost:8888",
         )
         start_socket_mode_server(self, 3012)
-        time.sleep(2)  # wait for the server
+        time.sleep(3)  # wait for the server
 
     def teardown_method(self):
         cleanup_mock_web_api_server(self)
@@ -60,11 +60,11 @@ class TestSocketModeWebsocketClient:
 
             handler.connect()
             assert handler.client.is_connected() is True
-            time.sleep(2)  # wait for the message receiver
+            time.sleep(3)  # wait for the message receiver
 
             handler.client.send_message("foo")
 
-            time.sleep(2)
+            time.sleep(3)
             assert result["shortcut"] is True
             assert result["command"] is True
         finally:
